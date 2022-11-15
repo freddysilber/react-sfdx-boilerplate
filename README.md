@@ -16,3 +16,21 @@ The `sfdx-project.json` file contains useful configuration information for your 
 - [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
 - [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
 - [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+
+## NOTES
+
+<!--DOMAIN:  site-app-4107-dev-ed.scratch -->
+<!-- TOKEN: 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG -->
+
+curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/limits/ -H "Authorization: 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG" -H "X-PrettyPrint:1"
+
+
+curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/limits/ -H 'Authorization: 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "X-PrettyPrint:1"
+
+
+curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/sobjects/Account/ -H 'Authorization Bearer 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" —d @new-account.json -X POST
+
+
+curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/sobjects/Account/ -H 'Authorization Bearer 00D6D0000003YQy\!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" —d @new-account.json -X POST
+
+# cURL = Client URL
