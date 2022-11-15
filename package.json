@@ -1,0 +1,21 @@
+{
+  "name": "react-sfdx-boilerplate",
+  "version": "1.0.0",
+  "description": "Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd my-app && npm run start && cd ../",
+    "push": "sfdx force:source:push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freddysilber/react-sfdx-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freddysilber/react-sfdx-boilerplate/issues"
+  },
+  "homepage": "https://github.com/freddysilber/react-sfdx-boilerplate#readme"
+}
