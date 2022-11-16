@@ -31,6 +31,8 @@ curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/
 curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/sobjects/Account/ -H 'Authorization Bearer 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" —d @new-account.json -X POST
 
 
-curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/sobjects/Account/ -H 'Authorization Bearer 00D6D0000003YQy\!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" —d @new-account.json -X POST
+curl https://business-drive-4188-dev-ed.scratch.lightning.force.com/services/data/v56.0/sobjects/Account/ -H 'Authorization Bearer 00D6D0000003YQy\!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" —d @new-account.json -X POST
+
+curl https://business-drive-4188-dev-ed.scratch.lightning.force.com/services/data/v42.0/sobjects/Contact -H 'Authorization Bearer 00D6D0000003YQy\!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" -d '{"FirstName" : "Johnny", "LastName" : "Appleseed"}'
 
 # cURL = Client URL
