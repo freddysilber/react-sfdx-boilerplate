@@ -66,7 +66,7 @@ function App() {
 
   if (accounts && accounts.data) {
     return (
-    <div className="App">
+      <div className="App">
         <Accounts accounts={accounts.data} />
       </div>
     );
