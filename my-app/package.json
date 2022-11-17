@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://CS76.salesforce.com/services/apexrest/project_cloud/remoting"
+  "proxy": "https://CS76.salesforce.com"
 }

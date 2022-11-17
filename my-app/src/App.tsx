@@ -1,43 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import Accounts from './components/accounts';
 
 // // eslint-disable-next-line no-var, @typescript-eslint/naming-convention
 // declare var Visualforce: any;
 
 function App() {
   console.log('<App/>');
+  const [accounts, setAccounts] = useState<any>({});
 
-  // fetch(`/services/apexrest/${defaults.rest.endpoint}`).then((response) => {
-  fetch(
-    // `https://site-app-4107-dev-ed.scratch.lightning.force.com/services/apexrest/project_cloud/remoting`,
-    // `https://CS76.salesforce.com/services/apexrest/project_cloud/remoting`,
-    `/services/apexrest/project_cloud/remoting`,
-    {
-      method: 'POST',
-      // mode: 'same-origin',
-      // mode: 'no-cors',
-      mode: 'cors',
-      headers: new Headers({
-        // Figure out how to get this token from the currently authenticated org
-        'Authorization': 'OAuth 00D1y0000002Ehp!ARwAQJXzqfo9lgysCO_c2E9jsKGQlv9dn1SYzSQCtl6zjsZuCo5Kor9xumJ5G7Twg3z0BiBbQzLyAc9dbmi.yxY3W4HP7iY2',
-        // 'Authorization': 'OAuth 00D9D0000001gFv!ARQAQKUgnmGlSHnveioc0IAHUUjGHzaTOve1g8q23YZBtxUMe.76NOBVOr3LaRDVmtbpGpzIyEtfmDXCpitCqgRhm1q4J92C',
-        'Content-Type': 'application/json',
-      }),
-      credentials: 'include',
-      body: JSON.stringify({
-        apexType: 'c.AccountRemoter.getAccount'
-      }),
+  useEffect(() => {
+    // fetch(`/services/apexrest/${defaults.rest.endpoint}`).then((response) => {
+    fetch(
+      // `/services/apexrest/remoting`,
+      `/services/apexrest/project_cloud/remoting`,
+      {
+        method: 'POST',
+        mode: 'cors',
+        headers: new Headers({
+          // Figure out how to get this token from the currently authenticated org
+          'Authorization': 'OAuth 00D1y0000002Ehp!ARwAQJXzqfo9lgysCO_c2E9jsKGQlv9dn1SYzSQCtl6zjsZuCo5Kor9xumJ5G7Twg3z0BiBbQzLyAc9dbmi.yxY3W4HP7iY2',
+          // 'Authorization': 'OAuth 00D9D0000001gFv!ARQAQKUgnmGlSHnveioc0IAHUUjGHzaTOve1g8q23YZBtxUMe.76NOBVOr3LaRDVmtbpGpzIyEtfmDXCpitCqgRhm1q4J92C',
+          'Content-Type': 'application/json',
+        }),
+        credentials: 'include',
+        body: JSON.stringify({
+          apexType: 'c.AccountRemoter.getAccount'
+        }),
 
-    }
-  ).then((response) => {
-    console.log(response);
-    return response.json();
-  }).then((data) => {
-    console.log(data);
-  }).catch((error) => {
-    console.error(error);
-  });
+      }
+    ).then((response) => {
+      return response.json();
+    }).then((data: Record<any, any>[]) => {
+      setAccounts({ data });
+    }).catch((error) => {
+      console.error(error);
+    });
+  }, []);
+
+
+  // TODO: use 'Visualforce.remoting.Manager.invokeAction' in production code
 
   // const accountName: string = '';
   // Visualforce.remoting.Manager.invokeAction(
@@ -63,7 +66,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {
+        accounts && accounts.data
+          ? <Accounts accounts={accounts.data} />
+          : ''
+      }
+
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -76,7 +85,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
