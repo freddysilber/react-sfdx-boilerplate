@@ -16,9 +16,12 @@ function App() {
     {
       method: 'POST',
       // mode: 'same-origin',
-      mode: 'no-cors',
+      // mode: 'no-cors',
+      mode: 'cors',
       headers: new Headers({
-        'Authorization': 'OAuth 00D9D0000001gFv!ARQAQKUgnmGlSHnveioc0IAHUUjGHzaTOve1g8q23YZBtxUMe.76NOBVOr3LaRDVmtbpGpzIyEtfmDXCpitCqgRhm1q4J92C',
+        // Figure out how to get this token from the currently authenticated org
+        'Authorization': 'OAuth 00D1y0000002Ehp!ARwAQJXzqfo9lgysCO_c2E9jsKGQlv9dn1SYzSQCtl6zjsZuCo5Kor9xumJ5G7Twg3z0BiBbQzLyAc9dbmi.yxY3W4HP7iY2',
+        // 'Authorization': 'OAuth 00D9D0000001gFv!ARQAQKUgnmGlSHnveioc0IAHUUjGHzaTOve1g8q23YZBtxUMe.76NOBVOr3LaRDVmtbpGpzIyEtfmDXCpitCqgRhm1q4J92C',
         'Content-Type': 'application/json',
       }),
       credentials: 'include',
@@ -29,7 +32,9 @@ function App() {
     }
   ).then((response) => {
     console.log(response);
-    console.log(response.json());
+    return response.json();
+  }).then((data) => {
+    console.log(data);
   }).catch((error) => {
     console.error(error);
   });

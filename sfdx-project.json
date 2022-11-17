@@ -1,8 +1,11 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
+      "path": "force-app/main",
       "default": true
+    },
+    {
+      "path": "force-app/unpackaged"
     }
   ],
   "name": "react-sfdx-boilerplate",
