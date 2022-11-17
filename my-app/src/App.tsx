@@ -7,7 +7,6 @@ import Accounts from './components/accounts';
 // declare var Visualforce: any;
 
 function App() {
-  console.log('<App/>');
   const [accounts, setAccounts] = useState<any>({});
 
   useEffect(() => {
