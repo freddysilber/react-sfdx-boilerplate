@@ -1,0 +1,7 @@
+<apex:page sidebar="false" title="My React App" docType="html-5.0">
+	<h1>My React App</h1>
+	<!-- <script src="{!URLFOR($Resource[appResource],'/apps/' + app + '/polyfills.js')}"></script> -->
+	<h1>
+		<script src="{!URLFOR($Resource.my_app,'/build')}"></script>
+	</h1>
+</apex:page>

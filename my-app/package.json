@@ -20,7 +20,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "---------------------------- TOOLS ----------------------------": "",
+    "my-app": "node bin/my-app.js",
+    "auth": "node tools/auth",
+    "start1": "npm run my-app start1 --",
+    "---------------------------- NPM ----------------------------": "",
+    "postbuild": "node tools/move-assets.js"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +46,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://CS76.salesforce.com"
+  "proxy": "https://CS76.salesforce.com",
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "commander": "^9.4.1"
+  }
 }
