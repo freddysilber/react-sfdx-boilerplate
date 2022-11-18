@@ -1,6 +1,7 @@
 const { Command } = require('commander');
 const { authSFDX } = require('../tools/auth');
 const { serveSafe } = require('../tools/serve');
+const { build, moveAssets } = require('../tools/build');
 
 const program = new Command();
 
@@ -10,7 +11,7 @@ program
 	.description('React API');
 
 program
-	.command('start1')
+	.command('start')
 	.description('Serves a React App')
 	.requiredOption('--app <app>', 'Project to serve')
 	.allowUnknownOption()
@@ -27,5 +28,12 @@ program
 			serveSafe(options.app);
 		}
 	});
+
+program
+	.command('build')
+	.description('Builds the app')
+	.action(function (options) {
+		build(moveAssets);
+	})
 
 program.parse();
