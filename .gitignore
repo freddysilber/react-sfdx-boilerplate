@@ -10,3 +10,6 @@ node_modules
 config
 #  Ignore Mac OS config
 .DS_Store
+
+# Assets
+force-app/main/default/staticresources/my_app/*

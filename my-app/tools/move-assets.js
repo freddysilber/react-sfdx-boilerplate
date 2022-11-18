@@ -3,15 +3,19 @@ const fs = require('fs-extra');
 const colors = require('colors');
 
 const buildDir = path.resolve(__dirname, '../build');
-const resourcesDir = path.resolve(__dirname, '../force-app/main/default/staticresources/my_app');
+const resourcesDir = path.resolve(__dirname, '../../force-app/main/default/staticresources/my_app/build');
 
-console.log(buildDir);
-console.log(resourcesDir);
+console.log('Moving build from: ' + colors.green(buildDir));
+console.log('To: ' + colors.green(resourcesDir));
 
-
-fs.move(buildDir, resourcesDir, (error) => {
-	if (error) {
-		return console.error(colors.red(error));
+fs.move(
+	buildDir,
+	resourcesDir,
+	{ overwrite: true },
+	(error) => {
+		if (error) {
+			return console.error(colors.red(error));
+		}
+		console.log(colors.green('★ Success! ★'));
 	}
-	console.log('success!');
-});
+)
