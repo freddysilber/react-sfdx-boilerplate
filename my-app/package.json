@@ -48,6 +48,7 @@
   },
   "proxy": "https://CS76.salesforce.com",
   "devDependencies": {
+    "@salesforce-ux/design-system": "^2.19.0",
     "colors": "^1.4.0",
     "commander": "^9.4.1"
   }

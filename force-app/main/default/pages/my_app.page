@@ -8,7 +8,8 @@
 	<body>
 		<div id="root"></div>
 		<!-- TODO fix these assets so they aren't hardcoded (use asset-manifest.json from build) -->
-		<script src="{!URLFOR($Resource.my_app,'/build/static/js/main.cd61f577.js')}"></script>
+		<script src="{!URLFOR($Resource.my_app,'/build/static/js/main.0697ffab.js')}"></script>
+		<!--? Do wee need 'chunks'??? -->
 		<!-- <script src="{!URLFOR($Resource.my_app,'/build/static/js/787.28cb0dcd.chunk.js')}"></script> -->
 	</body>
 </apex:page>

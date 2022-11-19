@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Accounts from './components/accounts';
-// import restConfig from '../auth/rest.config.json';
 
 // eslint-disable-next-line no-var, @typescript-eslint/naming-convention
 declare var Visualforce: any;
-// console.log(Visualforce);
 
 function App() {
   const [accounts, setAccounts] = useState<any>({});
@@ -35,21 +32,23 @@ function App() {
           }
         );
         const accounts = await response.json();
+        // TODO no error handling here
         setAccounts({
           data: accounts,
         });
       } else if (process.env.NODE_ENV === 'production') {
-        console.log('use VFRemoting here');
-        // TODO: use 'Visualforce.remoting.Manager.invokeAction' in production code
-
         Visualforce.remoting.Manager.invokeAction(
           'project_cloud.Remoting.execute',
           {
             apexType: 'c.AccountRemoter.getAccount',
+            name: 'params!',
             // Add additional apex params/args here?
           },
           function (result: any, event: any) {
             console.log(result, event);
+            setAccounts({
+              data: result,
+            });
             if (event.status) {
               console.log('here');
             } else if (event.type === 'exception') {
@@ -60,33 +59,6 @@ function App() {
           },
           { escape: true }
         );
-
-        const accountName: string = '';
-
-        // Visualforce.remoting.Manager.invokeAction(
-        //   'AccountRemoter.getAccount',
-        //   // '{!$RemoteAction.AccountRemoter.getAccount}',
-        //   accountName,
-        //   function (result: any, event: any) {
-        //     console.log('VFRemoting ', { result, event });
-        //     if (event.status) {
-        //       console.log(1);
-        //       // Get DOM IDs for HTML and Visualforce elements like this
-        //       // document!.getElementById('remoteAcctId')!.innerHTML = result.Id
-        //       // document!.getElementById(
-        //       //   "{!$Component.block.blockSection.secondItem.acctNumEmployees}"
-        //       // )!.innerHTML = result.NumberOfEmployees;
-        //     } else if (event.type === 'exception') {
-        //       console.log(2);
-        //       // document!.getElementById("responseErrors")!.innerHTML =
-        //       //   event.message + "<br/>\n<pre>" + event.where + "</pre>";
-        //     } else {
-        //       console.log(3);
-        //       // document!.getElementById("responseErrors")!.innerHTML = event.message;
-        //     }
-        //   },
-        //   { escape: true }
-        // );
       }
     }
 
