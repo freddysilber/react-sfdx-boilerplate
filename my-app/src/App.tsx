@@ -42,8 +42,11 @@ function App() {
         // TODO: use 'Visualforce.remoting.Manager.invokeAction' in production code
 
         const accountName: string = '';
+        // Visualforce.remoting.Manager.invokeAction.apply(Visualforce.remoting.Manager, callable).
+
         Visualforce.remoting.Manager.invokeAction(
-          '{!$RemoteAction.AccountRemoter.getAccount}',
+          'AccountRemoter.getAccount',
+          // '{!$RemoteAction.AccountRemoter.getAccount}',
           accountName,
           function (result: any, event: any) {
             console.log('VFRemoting ', { result, event });
