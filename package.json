@@ -1,7 +1,7 @@
 {
   "name": "react-sfdx-boilerplate",
   "version": "1.0.0",
-  "description": "Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.",
+  "description": "React Boilerplate App",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

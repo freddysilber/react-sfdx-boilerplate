@@ -1,5 +1,16 @@
 # Getting Started with Create React App
 
+## Getting Started
+- Install dependencies
+```bash
+npm i
+```
+- Serve
+```bash
+npm run start -- --app my-app
+```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -17,8 +17,9 @@ function App() {
 
       if (process.env.NODE_ENV === 'development') {
         const response = await fetch(
-          `/services/apexrest/remoting`,
-          // `/services/apexrest/project_cloud/remoting`,
+          // `/services/apexrest/remoting`,
+          // TODO need to resolve this namespace
+          `/services/apexrest/project_cloud/remoting`,
           {
             method: 'POST',
             mode: 'cors',
@@ -41,33 +42,51 @@ function App() {
         console.log('use VFRemoting here');
         // TODO: use 'Visualforce.remoting.Manager.invokeAction' in production code
 
-        const accountName: string = '';
-        // Visualforce.remoting.Manager.invokeAction.apply(Visualforce.remoting.Manager, callable).
-
         Visualforce.remoting.Manager.invokeAction(
-          'AccountRemoter.getAccount',
-          // '{!$RemoteAction.AccountRemoter.getAccount}',
-          accountName,
+          'project_cloud.Remoting.execute',
+          {
+            apexType: 'c.AccountRemoter.getAccount',
+            // Add additional apex params/args here?
+          },
           function (result: any, event: any) {
-            console.log('VFRemoting ', { result, event });
+            console.log(result, event);
             if (event.status) {
-              console.log(1);
-              // Get DOM IDs for HTML and Visualforce elements like this
-              // document!.getElementById('remoteAcctId')!.innerHTML = result.Id
-              // document!.getElementById(
-              //   "{!$Component.block.blockSection.secondItem.acctNumEmployees}"
-              // )!.innerHTML = result.NumberOfEmployees;
+              console.log('here');
             } else if (event.type === 'exception') {
-              console.log(2);
-              // document!.getElementById("responseErrors")!.innerHTML =
-              //   event.message + "<br/>\n<pre>" + event.where + "</pre>";
+              console.log('here 2');
             } else {
-              console.log(3);
-              // document!.getElementById("responseErrors")!.innerHTML = event.message;
+              console.log('here 3');
             }
           },
           { escape: true }
         );
+
+        const accountName: string = '';
+
+        // Visualforce.remoting.Manager.invokeAction(
+        //   'AccountRemoter.getAccount',
+        //   // '{!$RemoteAction.AccountRemoter.getAccount}',
+        //   accountName,
+        //   function (result: any, event: any) {
+        //     console.log('VFRemoting ', { result, event });
+        //     if (event.status) {
+        //       console.log(1);
+        //       // Get DOM IDs for HTML and Visualforce elements like this
+        //       // document!.getElementById('remoteAcctId')!.innerHTML = result.Id
+        //       // document!.getElementById(
+        //       //   "{!$Component.block.blockSection.secondItem.acctNumEmployees}"
+        //       // )!.innerHTML = result.NumberOfEmployees;
+        //     } else if (event.type === 'exception') {
+        //       console.log(2);
+        //       // document!.getElementById("responseErrors")!.innerHTML =
+        //       //   event.message + "<br/>\n<pre>" + event.where + "</pre>";
+        //     } else {
+        //       console.log(3);
+        //       // document!.getElementById("responseErrors")!.innerHTML = event.message;
+        //     }
+        //   },
+        //   { escape: true }
+        // );
       }
     }
 
