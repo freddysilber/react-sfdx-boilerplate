@@ -15,8 +15,6 @@ function App() {
 
   useEffect(() => {
     async function getAccounts() {
-      console.log(process.env);
-
       if (process.env.NODE_ENV === 'development') {
         const response = await fetch(
           `/services/apexrest/remoting`,
