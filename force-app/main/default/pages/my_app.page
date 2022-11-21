@@ -1,15 +1,18 @@
 <apex:page controller="ReactExtension" extensions="Remoting" sidebar="false" title="My React App" docType="html-5.0">
 
 	<head>
-		<!-- TODO fix these assets so they aren't hardcoded (use asset-manifest.json from build) -->
-		<apex:stylesheet value="{!URLFOR($Resource.my_app,'/build/static/css/main.69c5edaa.css')}" />
+		<!-- Load stylesheets -->
+		<apex:repeat value="{!cssAssets}" var="asset">
+			<apex:stylesheet value="{!URLFOR($Resource.my_app,'/build/' + asset)}" />
+		</apex:repeat>
 	</head>
 
 	<body>
+		<!-- Bootstrap app -->
 		<div id="root"></div>
-		<!-- TODO fix these assets so they aren't hardcoded (use asset-manifest.json from build) -->
-		<script src="{!URLFOR($Resource.my_app,'/build/static/js/main.76fed1f3.js')}"></script>
-		<!--? Do wee need 'chunks'??? -->
-		<!-- <script src="{!URLFOR($Resource.my_app,'/build/static/js/787.28cb0dcd.chunk.js')}"></script> -->
+		<!-- Load js assets -->
+		<apex:repeat value="{!jsAssets}" var="asset">
+			<script src="{!URLFOR($Resource.my_app,'/build/' + asset)}"></script>
+		</apex:repeat>
 	</body>
 </apex:page>

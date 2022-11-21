@@ -45,7 +45,7 @@ function App() {
           'Remoting.execute',
           {
             apexType: 'c.AccountRemoter.getAccount',
-            name: 'params!',
+            name: 'params!!',
             // Add additional apex params/args here?
           },
           function (result: any, event: any) {
