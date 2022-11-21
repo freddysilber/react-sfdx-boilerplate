@@ -2,6 +2,7 @@
 A simple react project with localhost and production working code
 
 ## Getting Started
+- Create a Scratch Org
 - Install Dependencies
 ```bash
 cd my-app && npm i
