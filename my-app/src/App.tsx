@@ -58,7 +58,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="slds-p-around_small slds-grid slds-grid_vertical">
+    <div className="app-container slds-p-around_small slds-grid slds-grid_vertical">
       {/* Spinner */}
       {loading()}
 

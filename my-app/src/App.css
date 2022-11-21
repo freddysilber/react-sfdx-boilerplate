@@ -3,3 +3,10 @@
 html {
   background-color: white;
 }
+
+html,
+body,
+#root,
+div.app-container {
+  height: 100%;
+}
