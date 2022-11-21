@@ -1,19 +1,11 @@
 #!/usr/bin/env node
 
 const colors = require('colors');
-const fs = require('fs');
-const path = require('path');
 const { spawnChild } = require('./child_process.js');
 
-// const angularJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../angular.json')));
 const utils = {
 	canServe(appName) {
 		return true;
-		// console.log(appName);
-		// const appConfig = angularJson.projects[appName];
-		// console.log(appConfig);
-
-		// return appConfig && ('serve' in appConfig.architect);
 	},
 };
 
@@ -26,22 +18,9 @@ function serve(appName, additionalArgs) {
 		cmd: 'react-scripts',
 		args: [
 			'start',
-			// `${appName}:serve:local`,
-			// '--parallel=1',
-			// '--proxy-config', 'auth/proxy.config.json',
 			...additionalArgs,
 		],
 		opts: { stdio: ['pipe', 'inherit', 'inherit'] },
-
-		// cmd: 'nx',
-		// args: [
-		// 	'run',
-		// 	`${appName}:serve:local`,
-		// 	'--parallel=1',
-		// 	'--proxy-config', 'auth/proxy.config.json',
-		// 	...additionalArgs,
-		// ],
-		// opts: { stdio: ['pipe', 'inherit', 'inherit'] },
 	});
 }
 
