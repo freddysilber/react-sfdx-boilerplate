@@ -1,5 +1,17 @@
 <apex:page controller="ReactExtension" extensions="Remoting" sidebar="false" title="My React App" docType="html-5.0">
-
+	<!-- Forces content to fill the parent iframe (Lightning and Consoles)-->
+	<style>
+		html body.sfdcBody {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: auto;
+			padding: 0;
+		}
+	</style>
+	
 	<head>
 		<!-- Load stylesheets -->
 		<apex:repeat value="{!cssAssets}" var="asset">
