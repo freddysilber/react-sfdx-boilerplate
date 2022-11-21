@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd my-app && npm run start && cd ../",
-    "push": "sfdx force:source:push"
+    "push": "sfdx force:source:legacy:push"
   },
   "repository": {
     "type": "git",

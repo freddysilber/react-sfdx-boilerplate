@@ -1,38 +1,22 @@
-# Salesforce DX Project: Next Steps
+# React SFDX Boilerplate
+A simple react project with localhost and production working code
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Getting Started
+- Install Dependencies
+```bash
+cd my-app && npm i
+```
+- Push Source
+```bash
+npm run push
+```
+- Serve
+```bash
+npm run start -- --app my-app
+```
 
-## How Do You Plan to Deploy Your Changes?
+## Build
+```bash
+cd my-app && npm run build
+```
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
-
-## NOTES
-
-<!--DOMAIN:  site-app-4107-dev-ed.scratch -->
-<!-- TOKEN: 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG -->
-
-curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/limits/ -H "Authorization: 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG" -H "X-PrettyPrint:1"
-
-
-curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/limits/ -H 'Authorization: 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "X-PrettyPrint:1"
-
-
-curl https://site-app-4107-dev-ed.scratch.my.salesforce.com/services/data/v56.0/sobjects/Account/ -H 'Authorization Bearer 00D6D0000003YQy!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" —d @new-account.json -X POST
-
-
-curl https://business-drive-4188-dev-ed.scratch.lightning.force.com/services/data/v56.0/sobjects/Account/ -H 'Authorization Bearer 00D6D0000003YQy\!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" —d @new-account.json -X POST
-
-curl https://business-drive-4188-dev-ed.scratch.lightning.force.com/services/data/v42.0/sobjects/Contact -H 'Authorization Bearer 00D6D0000003YQy\!ARgAQJMq1AjKLrJMZlPOjHU7cmoBvyRB0hwxdDC6KQZzWPSj83u5lkEDfXAz8UfcYvqCDlDUXwOhZ.s6UI21QX.xrOYeUiCG' -H "Content-Type: application/json" -d '{"FirstName" : "Johnny", "LastName" : "Appleseed"}'
-
-# cURL = Client URL
