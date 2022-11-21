@@ -25,7 +25,7 @@ export default function App() {
 
     getAccounts();
   }, []);
-  console.log(accounts);
+
   if (accounts && accounts.data && accounts.data.length) {
     return (
       <div className="App">
