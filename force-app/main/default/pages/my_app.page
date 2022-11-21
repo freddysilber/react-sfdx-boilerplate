@@ -8,7 +8,7 @@
 	<body>
 		<div id="root"></div>
 		<!-- TODO fix these assets so they aren't hardcoded (use asset-manifest.json from build) -->
-		<script src="{!URLFOR($Resource.my_app,'/build/static/js/main.6e36e335.js')}"></script>
+		<script src="{!URLFOR($Resource.my_app,'/build/static/js/main.76fed1f3.js')}"></script>
 		<!--? Do wee need 'chunks'??? -->
 		<!-- <script src="{!URLFOR($Resource.my_app,'/build/static/js/787.28cb0dcd.chunk.js')}"></script> -->
 	</body>
