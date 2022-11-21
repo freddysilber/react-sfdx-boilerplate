@@ -54,6 +54,7 @@ export default function App() {
 
   useEffect(() => {
     getAccounts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
