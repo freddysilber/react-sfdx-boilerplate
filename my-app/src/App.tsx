@@ -1,6 +1,11 @@
+import { Button } from '@salesforce/design-system-react';
+// import IconSettings from '@salesforce/design-system-react/components/icon-settings';
+// import Icon from '@salesforce/design-system-react/components/icon';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Accounts from './components/accounts';
+// import '@salesforce-ux/design-system/assets/icons/utility';
+// import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css';
 
 // eslint-disable-next-line no-var, @typescript-eslint/naming-convention
 declare var Visualforce: any;
@@ -14,9 +19,9 @@ function App() {
 
       if (process.env.NODE_ENV === 'development') {
         const response = await fetch(
-          // `/services/apexrest/remoting`,
+          `/services/apexrest/remoting`,
           // TODO need to resolve this namespace
-          `/services/apexrest/project_cloud/remoting`,
+          // `/services/apexrest/project_cloud/remoting`,
           {
             method: 'POST',
             mode: 'cors',
@@ -38,7 +43,8 @@ function App() {
         });
       } else if (process.env.NODE_ENV === 'production') {
         Visualforce.remoting.Manager.invokeAction(
-          'project_cloud.Remoting.execute',
+          // 'project_cloud.Remoting.execute',
+          'Remoting.execute',
           {
             apexType: 'c.AccountRemoter.getAccount',
             name: 'params!',
@@ -68,6 +74,14 @@ function App() {
   if (accounts && accounts.data) {
     return (
       <div className="App">
+        <Button label="Hello Button" />
+        {/* <Icon
+          assistiveText={{ label: 'Warning' }}
+          category="utility"
+          name="warning"
+          size="x-small"
+        /> */}
+        <button className="slds-button slds-button_brand">Button</button>
         <Accounts accounts={accounts.data} />
       </div>
     );

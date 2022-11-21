@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@salesforce-ux/design-system": "^2.19.0",
+    "@salesforce/design-system-react": "^0.10.50",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -26,7 +28,7 @@
     "my-app": "node bin/my-app.js",
     "auth": "node tools/auth",
     "start": "npm run my-app start --",
-    "build": "npm run my-app build"
+    "build": "npm run my-app build --"
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +50,6 @@
   },
   "proxy": "https://CS76.salesforce.com",
   "devDependencies": {
-    "@salesforce-ux/design-system": "^2.19.0",
     "colors": "^1.4.0",
     "commander": "^9.4.1"
   }
