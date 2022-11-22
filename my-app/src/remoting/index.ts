@@ -2,6 +2,7 @@ import apexInvoke from './apex';
 import restInvoke from './rest';
 
 /**
+ * Hits an endpoint in SF
  * @param method Apex classname and method to use ('MyClass.myMethod')
  * @param args Params to use
  * @returns Promise of the return value
@@ -13,7 +14,7 @@ export default async function remotingInvoke<T = any>(
 	switch (process.env.NODE_ENV) {
 		case 'development':
 			if (!process.env.REACT_APP_TOKEN) {
-				throw Promise.reject('No Auth Token Provided!');
+				throw Promise.reject<string>('No Auth Token Provided!');
 			}
 			/**
 			 * Use REST API in dev mode

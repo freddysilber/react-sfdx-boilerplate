@@ -20,9 +20,11 @@ export default async function restInvoke<T = any>(
 		}
 	);
 	const res = await response.json();
-	if (response.status === 200) {
-		return Promise.resolve(res);
-	} else {
-		return Promise.reject(res[0].message);
+
+	switch (response.status) {
+		case 200:
+			return Promise.resolve(res);
+		default:
+			return Promise.reject(res[0].message);
 	}
 }
