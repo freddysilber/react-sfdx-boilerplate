@@ -10,12 +10,12 @@ export default async function remotingInvoke<T = any>(
 			/**
 			 * Use REST API in dev mode
 			 */
-			return restInvoke(method, args);
+			return restInvoke<T>(method, args);
 		case 'production':
 			/**
 			 * Use Visualforce Remoting in prod mode
 			 */
-			return apexInvoke(method, args);
+			return apexInvoke<T>(method, args);
 		case 'test':
 		default:
 			return Promise.resolve(null as any);

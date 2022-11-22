@@ -10,7 +10,7 @@ export default function Accounts(props: {
 					{props.accounts.length} Account{props.accounts.length === 1 ? '' : 's'}
 				</span>
 
-				{props.accounts.map((a: any) => {
+				{props.accounts.map((a: SObjectFieldValues) => {
 					return (
 						<p key={a.Id}>
 							<span className="slds-text-color_inverse-weak">Name: </span>

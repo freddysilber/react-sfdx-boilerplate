@@ -2,7 +2,7 @@ import { buildBody } from './models';
 
 export default async function restInvoke<T = any>(
 	method: string,
-	args: any
+	args?: Record<string, any>
 ): Promise<T> {
 	const response = await fetch(
 		`/services/apexrest/remoting`,
