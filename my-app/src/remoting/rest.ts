@@ -1,7 +1,6 @@
-import { buildBody, RequestBody } from './models';
+import { buildBody } from './models';
 
 export default async function restInvoke<T = any>(method: string, ...args: any): Promise<T> {
-	const body: RequestBody = buildBody(method, ...args);
 	const response = await fetch(
 		`/services/apexrest/remoting`,
 		// TODO need to resolve this namespace
@@ -15,7 +14,7 @@ export default async function restInvoke<T = any>(method: string, ...args: any):
 				'Content-Type': 'application/json',
 			}),
 			credentials: 'include',
-			body: JSON.stringify(body),
+			body: JSON.stringify(buildBody(method, ...args)),
 		}
 	);
 	const res = await response.json();
