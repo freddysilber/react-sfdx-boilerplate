@@ -2,7 +2,8 @@ import { buildBody } from './remoting-utils';
 
 export default async function restInvoke<T = any>(
 	method: string,
-	args?: Record<string, any>
+	token: string,
+	args?: Record<string, any>,
 ): Promise<T> {
 	const response = await fetch(
 		`/services/apexrest/remoting`,
@@ -11,7 +12,7 @@ export default async function restInvoke<T = any>(
 			mode: 'cors',
 			headers: new Headers({
 				// Use token from env vars (dev). This is set in the 'auth.js' script
-				'Authorization': `OAuth ${process.env.REACT_APP_TOKEN}`,
+				'Authorization': `OAuth ${token}`,
 				'Content-Type': 'application/json',
 			}),
 			credentials: 'include',
