@@ -38,12 +38,10 @@ export default function App() {
 
   function loading() {
     if (state.loading) {
-      return (
-        <Spinner
-          variant="brand"
-          size="medium"
-        />
-      );
+      return <Spinner
+        variant="brand"
+        size="medium"
+      />;
     } else {
       return null;
     };

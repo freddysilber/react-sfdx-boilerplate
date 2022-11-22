@@ -3,10 +3,12 @@ import { buildBody } from './models';
 // eslint-disable-next-line no-var, @typescript-eslint/naming-convention
 declare var Visualforce: any;
 
-export default function apexInvoke<T = any>(method: string, args?: Record<string, any>): Promise<T> {
+export default function apexInvoke<T = any>(
+	method: string,
+	args?: Record<string, any>
+): Promise<T> {
 	return new Promise((resolve, reject) => {
 		Visualforce.remoting.Manager.invokeAction(
-			// 'project_cloud.Remoting.execute',
 			'Remoting.execute',
 			buildBody(method, args),
 			function (result: any, event: any) {

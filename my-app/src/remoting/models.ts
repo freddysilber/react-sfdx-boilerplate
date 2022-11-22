@@ -3,7 +3,10 @@ export interface RequestBody {
 	[x: string]: any,
 }
 
-export function buildBody(method: string, args?: Record<string, any>): RequestBody {
+export function buildBody(
+	method: string,
+	args?: Record<string, any>
+): RequestBody {
 	const body: RequestBody = {
 		apexType: `c.${method}`,
 	};
