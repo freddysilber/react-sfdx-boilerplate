@@ -1,4 +1,4 @@
-import { buildBody } from './models';
+import { buildBody } from './remoting-utils';
 
 export default async function restInvoke<T = any>(
 	method: string,

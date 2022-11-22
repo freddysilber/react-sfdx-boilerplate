@@ -1,4 +1,4 @@
-import { buildBody } from './models';
+import { buildBody } from './remoting-utils';
 
 // eslint-disable-next-line no-var, @typescript-eslint/naming-convention
 declare var Visualforce: any;

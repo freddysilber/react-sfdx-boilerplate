@@ -21,6 +21,7 @@ export default function App() {
       ...state,
       loading: true,
     });
+
     remotingInvoke<SObjectFieldValues[]>(
       'AccountRemoter.getAccount',
       {
