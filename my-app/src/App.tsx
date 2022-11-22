@@ -12,12 +12,14 @@ export interface SObjectFieldValues {
 }
 
 export default function App() {
+  // Component state
   const [state, setState] = useState<Partial<{
     accounts: SObjectFieldValues[],
     contacts: SObjectFieldValues[],
     loading: boolean,
   }>>({});
 
+  // Method to fetch Account records
   async function getAccounts() {
     setState({
       ...state,
@@ -26,6 +28,7 @@ export default function App() {
 
     remotingInvoke<SObjectFieldValues[]>(
       'AccountRemoter.getAccount',
+      // Send params
       {
         name: 'params!'
       },
@@ -39,6 +42,7 @@ export default function App() {
     });
   }
 
+  // Method to fetch Contact records
   async function fetchContacts() {
     setState({
       ...state,
@@ -57,6 +61,7 @@ export default function App() {
     });
   }
 
+  // Dumb component for spinner
   function loading() {
     if (state.loading) {
       return <Spinner
@@ -73,6 +78,7 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Component body
   return (
     <div className="app-container slds-p-around_small slds-grid slds-grid_vertical">
       {/* Spinner */}
