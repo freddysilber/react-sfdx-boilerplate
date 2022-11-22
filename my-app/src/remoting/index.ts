@@ -2,7 +2,6 @@ import apexInvoke from './apex';
 import restInvoke from './rest';
 
 /**
- * 
  * @param method Apex classname and method to use ('MyClass.myMethod')
  * @param args Params to use
  * @returns Promise of the return value
