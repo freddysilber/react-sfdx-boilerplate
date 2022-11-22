@@ -2,6 +2,7 @@ import { Button, Spinner } from '@salesforce/design-system-react';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Accounts from './components/accounts';
+import Contacts from './components/contacts';
 import remotingInvoke from './remoting';
 
 export interface SObjectFieldValues {
@@ -13,6 +14,7 @@ export interface SObjectFieldValues {
 export default function App() {
   const [state, setState] = useState<Partial<{
     accounts: SObjectFieldValues[],
+    contacts: SObjectFieldValues[],
     loading: boolean,
   }>>({});
 
@@ -31,6 +33,24 @@ export default function App() {
       setState({
         ...state,
         accounts
+      });
+    }).catch((error) => {
+      alert(error);
+    });
+  }
+
+  async function fetchContacts() {
+    setState({
+      ...state,
+      loading: true,
+    });
+
+    remotingInvoke<SObjectFieldValues[]>(
+      'Contacts.getContacts'
+    ).then((contacts) => {
+      setState({
+        ...state,
+        contacts
       });
     }).catch((error) => {
       alert(error);
@@ -60,11 +80,18 @@ export default function App() {
 
       <div className="slds-box">
         <Button
-          label="Refresh"
+          label="Refresh Accounts"
           variant="brand"
           onClick={getAccounts}
         />
+        <Button
+          label="Get Contacts"
+          variant="brand"
+          onClick={fetchContacts}
+        />
+        <br />
         <Accounts accounts={state.accounts} />
+        <Contacts contacts={state.contacts} />
       </div>
     </div>
   );
