@@ -1,8 +1,8 @@
+import React, { useEffect, useState } from 'react';
 import { Button, Spinner } from '@salesforce/design-system-react';
-import { useEffect, useState } from 'react';
 import './App.css';
-import Accounts from './components/accounts';
 import remotingInvoke from './remoting';
+const Accounts = React.lazy(() => import('./components/accounts'));
 
 export interface SObjectFieldValues {
   Id: string;
@@ -40,9 +40,8 @@ export default function App() {
     if (state.loading) {
       return (
         <Spinner
-          size="small"
-          variant="base"
-          assistiveText={{ label: 'Main Frame Loading...' }}
+          variant="brand"
+          size="medium"
         />
       );
     } else {
