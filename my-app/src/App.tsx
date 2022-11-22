@@ -39,13 +39,11 @@ export default function App() {
   function loading() {
     if (state.loading) {
       return (
-        <div style={{ height: '100%' }}>
-          <Spinner
-            size="small"
-            variant="base"
-            assistiveText={{ label: 'Main Frame Loading...' }}
-          />
-        </div>
+        <Spinner
+          size="small"
+          variant="base"
+          assistiveText={{ label: 'Main Frame Loading...' }}
+        />
       );
     } else {
       return null;
@@ -54,7 +52,7 @@ export default function App() {
 
   useEffect(() => {
     getAccounts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
