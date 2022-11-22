@@ -1,5 +1,5 @@
 # React SFDX Boilerplate
-A simple react project with localhost and production working code
+A simple react project with localhost and production ready code
 
 ## Getting Started
 - Create a Scratch Org
