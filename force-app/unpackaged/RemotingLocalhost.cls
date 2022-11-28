@@ -1,12 +1,3 @@
-/**
- * @author Oleg Bogdanovych
- * @date February 2018
- *
- * @group Endpoints
- *
- * @description Class contains entry point for REST or Remote action
- */
-
 @RestResource(urlMapping='/remoting/*')
 global class RemotingLocalhost {
 	@HttpPost

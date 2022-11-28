@@ -73,9 +73,7 @@ global class Remoting {
 			return Remoting.execute(request);
 		}
 
-		System.debug('Unauthorized origin');
 		return null;
-		// throw new CCProjexEnterpriseException('Unauthorized origin');
 	}
 
 	private static SharingContext getSharingContext() {
@@ -103,8 +101,9 @@ global class Remoting {
 		}
 	}
 
-	private static Set<String> validNamespaces = new Set<String>{ '', 'ccpe_ocp' };
-	// private static Set<String> validNamespaces = new Set<String>{ PrefixesHelper.namespacePrefix, 'ccpe_ocp' };
+	private static Set<String> validNamespaces = new Set<String>{
+		''
+	};
 
 	private static Boolean verifyJSONRequestOrigin(JSONRequest request) {
 		return validNamespaces.contains(request.namespace);
