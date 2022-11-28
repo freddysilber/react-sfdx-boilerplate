@@ -21,6 +21,6 @@ export default function Contacts(props: {
 			</>
 		);
 	} else {
-		return <div className="slds-align_absolute-center">No Records Found</div>
+		return <div className="slds-align_absolute-center">No Contacts Found</div>
 	}
 }

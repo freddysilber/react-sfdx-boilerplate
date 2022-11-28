@@ -1,8 +1,8 @@
 import { Button, Spinner } from '@salesforce/design-system-react';
 import { useEffect, useState } from 'react';
 import './App.css';
-import Accounts from './components/accounts';
-import Contacts from './components/contacts';
+import Accounts from './components/Accounts';
+import Contacts from './components/Contacts';
 import remotingInvoke from './remoting';
 
 export interface SObjectFieldValues {
