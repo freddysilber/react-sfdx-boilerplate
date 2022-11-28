@@ -2,16 +2,27 @@
 A simple react project with localhost and production ready code
 
 ## Getting Started
-- Create a Scratch Org
-- Install Dependencies
+
+### Create a Scratch Org
+```bash
+sfdx force:org:create -f project-scratch-def.json -a MyScratchOrg --setdefaultusername
+```
+
+### Push Source Code
+```bash
+sfdx force:source:push
+```
+
+### Install Dependencies
+
 ```bash
 cd my-app && npm i
 ```
-- Push Source
+### Push Source
 ```bash
 npm run push
 ```
-- Serve
+### Serve
 ```bash
 npm run start -- --app my-app
 ```
